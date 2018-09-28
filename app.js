@@ -16,11 +16,9 @@ const commentRoutes = require('./routes/comments')
 const campgroundRoutes = require('./routes/campgrounds')
 const authRoutes = require('./routes/index')
 
-require('dotenv').config()
-
 // ! Can export mongoURI to separate file
-// mongoose.connect('mongodb://localhost/yelp_camp')
-mongoose.connect('mongodb://cyax:cyax23@ds145072.mlab.com:45072/yelp_camp')
+mongoose.connect(process.env.DATABASEURL)
+// mongoose.connect('mongodb://cyax:cyax23@ds145072.mlab.com:45072/yelp_camp')
 app.use(bodyParser.urlencoded({
   extended: true
 }))
@@ -32,7 +30,7 @@ app.use(methodOverride('_method'))
 app.locals.moment = require('moment')
 
 app.use(require('express-session')({
-  secret: 'a gaza me seh',
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }))

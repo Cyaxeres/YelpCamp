@@ -170,7 +170,7 @@ router.post('/reset/:token', function (req, res) {
       })
       const mailOptions = {
         to: user.email,
-        from: 'yelpcampcourse@gmail.com',
+        from: process.env.EMAIL,
         subject: 'Your Password has been changed',
         text: 'Hello, \n\n' + 'This is to let you know that the password for your account ' + user.email + ' has just been changed.\n'
       }
