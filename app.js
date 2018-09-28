@@ -32,7 +32,7 @@ app.use(methodOverride('_method'))
 app.locals.moment = require('moment')
 
 app.use(require('express-session')({
-  secret: process.env.SECRET,
+  secret: 'a gaza me seh',
   resave: false,
   saveUninitialized: false
 }))
