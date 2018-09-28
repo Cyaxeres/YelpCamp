@@ -19,7 +19,8 @@ const authRoutes = require('./routes/index')
 require('dotenv').config()
 
 // ! Can export mongoURI to separate file
-mongoose.connect('mongodb://localhost/yelp_camp')
+// mongoose.connect('mongodb://localhost/yelp_camp')
+mongoose.connect('mongodb://cyax:cyax23@ds145072.mlab.com:45072/yelp_camp')
 app.use(bodyParser.urlencoded({
   extended: true
 }))
