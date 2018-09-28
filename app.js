@@ -18,7 +18,6 @@ const authRoutes = require('./routes/index')
 
 // ! Can export mongoURI to separate file
 mongoose.connect(process.env.DATABASEURL)
-// mongoose.connect('mongodb://cyax:cyax23@ds145072.mlab.com:45072/yelp_camp')
 app.use(bodyParser.urlencoded({
   extended: true
 }))
